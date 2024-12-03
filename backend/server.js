@@ -9,7 +9,8 @@ connectDB();
 const app = express();
 // middleware
 app.use(cors());
-
+// allow multiple origin
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 // Use routes
