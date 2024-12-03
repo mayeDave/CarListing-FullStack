@@ -9,10 +9,8 @@ connectDB();
 const app = express();
 // middleware
 app.use(cors());
-// http://localhost:5173
-app.use(cors({ 
-    origin: 'http://localhost:5174'  //allow only this origin
- }));
+
+
 app.use(express.json());
 // Use routes
 app.use('/api/auth', authRoutes);

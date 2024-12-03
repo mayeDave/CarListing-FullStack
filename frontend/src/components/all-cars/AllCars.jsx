@@ -6,9 +6,12 @@ const AllCars = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // handle fetch cars from api
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const fetchCars = async () => {
     setLoading(true);
-    const url = "http://localhost:5000/api/cars";
+    const url = `${apiUrl}/api/cars`;
     try {
       const response = await fetch(url, {
         method: "GET",
