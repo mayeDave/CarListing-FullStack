@@ -31,10 +31,11 @@ function Login() {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         
-        // send data to database: http://localhost:5000/api/auth/login
+        // handle login from api
+        const apiUrl = import.meta.env.VITE_API_URL;
         try {
           setProcessing(true);
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(`${apiUrl}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,10 +48,11 @@ function Login() {
               console.log(data);
               // set token to local storage
               localStorage.setItem("authToken", data.authToken);
+              localStorage.setItem("loginUser", JSON.stringify(data.user));
               alert("Login successful");
               handleClearInput();
       
-              // navigate to login view
+              // navigate to home view
               navigate("/");
             }
           } catch (error) {
@@ -101,6 +103,8 @@ function Login() {
         Login
       </Button>
       )}
+      <br/>
+      <Button variant="primary" onClick={() => navigate("/register")} className='mt-3'>Create New Account</Button>
     </Form>
     </div>
    

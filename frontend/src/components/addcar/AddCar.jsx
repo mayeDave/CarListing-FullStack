@@ -34,9 +34,12 @@ const AddCar = () => {
     }
   
     setValidated(true);
+
+    // handle add car from api
+    const apiUrl = import.meta.env.VITE_API_URL;
   
     try {
-      const response = await fetch("http://localhost:5000/api/cars", {
+      const response = await fetch(`${apiUrl}/api/cars`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

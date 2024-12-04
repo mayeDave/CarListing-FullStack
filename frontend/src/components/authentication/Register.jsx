@@ -32,9 +32,10 @@ function Register() {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         
-        // send data to database: http://localhost:5000/api/signup
+        // handle signup from api
+        const apiUrl = import.meta.env.VITE_API_URL;
         try {
-            const response = fetch('http://localhost:5000/api/auth/signup', {
+            const response = fetch(`${apiUrl}/api/auth/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

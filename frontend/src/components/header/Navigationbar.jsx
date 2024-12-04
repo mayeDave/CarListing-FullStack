@@ -4,8 +4,23 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
 
 function Navigationbar() {
+  const navigate = useNavigate(); // navigate to other pages
+
+  // get authToken and loginUser from local storage
+  const authToken = localStorage.getItem("authToken");
+  const loginUser = JSON.parse(localStorage.getItem("loginUser"));
+  
+  //handle logout
+  const handleLogout = () => {
+    // remove authToken and loginUser from local storage
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("loginUser");
+    // navigate to login view
+    navigate("/login");
+  }
   return (
     <Navbar expand="lg" bg="primary" data-bs-theme="dark">
       <Container fluid>
@@ -26,9 +41,13 @@ function Navigationbar() {
             
             <NavDropdown title="More" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Cars</NavDropdown.Item>
-              <NavDropdown.Item href="/login">
-                Login
-              </NavDropdown.Item>
+              {authToken? (       
+                  <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+              ) : (
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+              )}
+                
+              <NavDropdown.Divider />
               <NavDropdown.Item href="/register">
                 Register
               </NavDropdown.Item>
