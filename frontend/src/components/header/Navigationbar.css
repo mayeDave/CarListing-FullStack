@@ -1,0 +1,92 @@
+/* General Navbar Styling */
+.navbar {
+    transition: all 0.3s ease-in-out; /* Smooth shrinking transition */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-light {
+    background-color: #f8f9fa;
+  }
+  
+  .navbar-brand img {
+    transition: all 0.3s ease; /* Smooth logo size transition */
+  }
+  
+  .navbar-brand p {
+    margin: 0;
+    text-align: center;
+    color: #6c757d;
+    font-size: 15px;
+    font-family: "Cursive";
+  }
+  
+  .navbar .nav-link {
+    color: #dc3545 !important; /* Primary link color */
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #b71c1c !important; /* Darker red on hover */
+  }
+  
+  .navbar .nav-dropdown .dropdown-item {
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar .nav-dropdown .dropdown-item:hover {
+    color: #0056b3;
+  }
+  
+  .navbar .form-control {
+    border-radius: 20px;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .navbar .form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+  }
+  
+  .navbar .btn-outline-success {
+    border-radius: 20px;
+    font-weight: bold;
+    color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .navbar .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  /* Shrink Navbar Styling */
+  .navbar-shrink {
+    padding: 5px 0;
+    background-color: #ffffff !important;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-shrink .navbar-brand img {
+    width: 120px !important;
+    height: 80px !important;
+  }
+  
+  .navbar-shrink .navbar-brand p {
+    font-size: 12px !important;
+  }
+  
+  .navbar-shrink .nav-link {
+    font-size: 0.9rem !important;
+    margin-left: 15px !important;
+  }
+  
+  .navbar-shrink .btn-outline-success {
+    font-size: 0.9rem !important;
+  }
+  

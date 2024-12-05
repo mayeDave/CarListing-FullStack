@@ -1,8 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+  const navigate = useNavigate();
     // handle password show or hide
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
@@ -46,6 +48,7 @@ function Register() {
                 handleClearInput();
             response.json().then((data) => {
                 console.log(data);
+                navigate('/login');
             })
         } catch (error) {
             
