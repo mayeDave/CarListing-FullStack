@@ -1,7 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import GoogleMap from '../GoogleMap';
 const Home = () => {
+  
+  
   return (
-    <div style={{ marginBottom: '100px' }}>
+    <div>
         
         <Carousel fade>
       <Carousel.Item>
@@ -62,6 +68,27 @@ const Home = () => {
       <button className="btn btn-outline-danger" type="submit">Search</button>
     </form>
     </div>
+
+    <Container className='mt-5'>
+      <Row className='mt-auto'>
+        <Col md={6} lg={6}>
+          <h1 className='mt-5 mb-5 text-danger'>Head down to Maye Autos, the largest new and used car supermarket in the Western Hemisphere!</h1>
+          <p className='text-default fw-bold'>If you are looking for a car, whether new or used, CarCity is the place to be! With a wide range of cars including Holden, Ford, Toyota, Mazda, Hyundai, Volkswagen, Subaru, Mitsubishi, as well as prestige cars including Audi, BMW, and Mercedes-Benz, and new cars as well, there is a car for everyone at CarCity.</p>
+          <p className='text-default fw-bold'>With over 20 independent dealers, you are sure to find the car you are looking for, at a competitive price, particularly with CarCity being the largest used car complex in the Southern Hemisphere!</p>
+          <p className='text-default fw-bold'>Having been established in 1985, CarCity has become a household name, and has over 35 years of experience in the car trade. We pride ourselves on our knowledge of the used and new car trade, and are confident that you will find what you are looking for, at a very fair price.</p>
+          <p className='text-default fw-bold'>Buy with comfort with extended warranty available, and onsite finance.</p>
+          <p className='text-default fw-bold'>So what are you waiting for? Head on down to CarCity today and remember to “keep your eyes open for a bargain!”</p>
+        </Col>
+        
+        <Col md={6} lg={6}>
+        <div className='mt-5 mb-5'>
+        <h1 className='text-default text-center'>Locations</h1>
+        <GoogleMap />
+      
+        </div>
+        </Col>
+      </Row>
+    </Container>
   
     </div>
     
